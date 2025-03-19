@@ -8,7 +8,7 @@ body {
     font-family: "novecento-sans-wide", sans-serif;
     font-size: 16px;
     font-weight: 400;
-    background: url(images/main-bg.png) no-repeat;
+    background: url(images/main-bg.webp) no-repeat;
     background-size: cover;
     background-position: center;
     text-transform: uppercase;
@@ -339,11 +339,15 @@ img {
 /*======= hero style start hhare ======= */
 
 .hero-section {
-    background: url(images/hero-bg.png) no-repeat;
     background-size: 100% 100%;
     background-position: center;
     padding: 90px 0;
     padding-bottom: 40px;
+}
+.hero-section.visible {
+    background: url(images/hero-bg.webp) no-repeat; 
+    background-size: 100% 100%;
+    background-position: center;
 }
 
 .hero-wrapper h4 {
@@ -601,7 +605,7 @@ img {
 
 .single-roadmap-items {
     min-height: 265px;
-    background: url(images/rodamap-left-bg.png) no-repeat;
+    background: url(images/rodamap-left-bg.webp) no-repeat;
     background-size: 100% 100%;
     position: relative;
     padding: 20px 30px;
@@ -641,7 +645,7 @@ img {
 }
 
 .right-direction {
-    background-image: url(images/rodamap-right-bg.png);
+    background-image: url(images/rodamap-right-bg.webp);
     background-repeat: no-repeat;
 }
 
@@ -935,7 +939,7 @@ img {
 .presale-live-box {
     width: 577px;
     padding: 20px 10px;
-    background: url(images/presale-box-bg.png) no-repeat;
+    background: url(images/presale-box-bg.webp) no-repeat;
     background-size: cover;
     background-position: center;
     /* border: 4px solid var(--color-primery); */
@@ -1255,7 +1259,7 @@ img {
 }
 
 .join-presale-wp .single-earn-wp {
-    background: url(images/join-presale-bg.png) no-repeat;
+    background: url(images/join-presale-bg.webp) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -1272,7 +1276,7 @@ img {
 /*======= connect wallet popup style start hare ===== */
 
 .connect-wallet-popup .modal-content {
-	background: url(images/popup-bg.png) no-repeat;
+	background: url(images/popup-bg.webp) no-repeat;
     background-position: center;
     background-size: cover;
 	padding: 10px 20px;

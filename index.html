@@ -10,16 +10,17 @@
         <!-- Title -->
         <title>Wild Token</title>
         <!-- Fav Icon -->
-        <link rel="icon" href="images/favicon.ico">
+        <link rel="icon" href="images/favicon.webp">
         <!-- Include Bootstrap -->
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
         <!-- font link  -->
         <link rel="stylesheet" href="https://use.typekit.net/vnj2jcw.css">
-        <link href="https://db.onlinewebfonts.com/c/f3566bc4c4ca5885b983ebb8a7423223?family=ManometerSans" rel="stylesheet">
+        <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/f3566bc4c4ca5885b983ebb8a7423223?family=ManometerSans">
         <!-- owl css  -->
         <link rel="stylesheet" href="css/owl.carousel.css">
         <!-- fontawsome css file  -->
-        <link rel="stylesheet" href="css/font-awesome-pro.css">
+        <link rel="stylesheet" href="css/font-awesome-pro.css" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="css/font-awesome-pro.css"></noscript>
         <!-- wow animation  -->
         <link rel="stylesheet" href="css/animate.css">
         <!-- Main StyleSheet -->
@@ -82,7 +83,7 @@
 
 
         <div class="for-how-to-buy">
-            <section class="hero-section" id="home">
+            <section class="hero-section lazyload-bg" id="home">
                 <div class="container container-1000">
                     <div class="hero-wrapper wow fadeInUp text-center">
                         <h4 class="wow fadeInUp">EARN. PLAY. PAY.</h4>
@@ -118,7 +119,7 @@
                                 <div class="col-lg-4">
                                     <div class="single-wild-items wow fadeInUp">
                                         <div class="icons">
-                                            <img src="images/wild-icon-1.png" alt="">
+                                            <img  loading="lazy" src="images/wild-icon-1.webp" alt="">
                                         </div>
                                         <div class="wild-content">
                                             <p>Buy exclusive merch, <br> toys, and more </p>
@@ -128,7 +129,7 @@
                                 <div class="col-lg-4 mt-4 mt-lg-0">
                                     <div class="single-wild-items  wow fadeInUp">
                                         <div class="icons">
-                                            <img src="images/cell-phone.png" alt="">
+                                            <img  loading="lazy" src="images/cell-phone.webp" alt="">
                                         </div>
                                         <div class="wild-content">
                                             <p>Use it for entertainment <br class="d-lg-none"> and interactive experiences </p>
@@ -138,7 +139,7 @@
                                 <div class="col-lg-4 mt-4 mt-lg-0">
                                     <div class="single-wild-items  wow fadeInUp">
                                         <div class="icons">
-                                            <img src="images/money-icon.png" alt="">
+                                            <img  loading="lazy" src="images/money-icon.webp" alt="">
                                         </div>
                                         <div class="wild-content">
                                             <p>Earn through our <br>upcoming app </p>
@@ -301,7 +302,7 @@
                     <div class="how-earn-content mt-auto">
                         <div class="single-earn-wp wow fadeInUp">
                             <div class="icon">
-                                <img src="images/earn-icon-1.png" alt="">
+                                <img  loading="lazy" src="images/earn-icon-1.webp" alt="">
                             </div>
                             <div class="single-earn-content text-end">
                                 <h4>Create & Clip Content</h4>
@@ -310,7 +311,7 @@
                         </div>
                         <div class="single-earn-wp wow fadeInUp">
                             <div class="icon">
-                                <img src="images/earn-icon-2.png" alt="">
+                                <img  loading="lazy" src="images/earn-icon-2.webp" alt="">
                             </div>
                             <div class="single-earn-content text-end">
                                 <h4>Engage on Social Media</h4>
@@ -319,7 +320,7 @@
                         </div>
                         <div class="single-earn-wp wow fadeInUp">
                             <div class="icon">
-                                <img src="images/earn-icon-3.png" alt="">
+                                <img  loading="lazy" src="images/earn-icon-3.webp" alt="">
                             </div>
                             <div class="single-earn-content text-end">
                                 <h4>Hold & Earn</h4>
@@ -331,7 +332,7 @@
                         </div>
                     </div>
                     <div class="earn-app-img wow fadeInRight">
-                        <img src="images/WildApp-animation.gif" alt="">
+                        <img loading="lazy" src="images/WildApp-animation.gif" alt="">
                     </div>
                 </div>
                 <div class="how-earn-btm wow fadeInUp text-center">
@@ -414,17 +415,17 @@
                         <ul>
                             <li>
                                 <a href="#">
-                                   <img src="images/footer-icon-1.png" alt="">
+                                   <img  loading="lazy" src="images/footer-icon-1.webp" alt="">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                   <img src="images/footer-icon-2.png" alt="">
+                                   <img  loading="lazy" src="images/footer-icon-2.webp" alt="">
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="images/footer-icon-3.png" alt="">
+                                    <img  loading="lazy" src="images/footer-icon-3.webp" alt="">
                                 </a>
                             </li>
                         </ul>
@@ -439,15 +440,39 @@
             </div>
         </section>
         <!-- Main jQuery -->
-        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
         <!-- Bootstrap jQuery -->
-        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" defer></script>
         <!-- owl js  -->
-        <script src="js/owl-carousel.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" defer></script>
         <!-- wow js  -->
-        <script src="js/wow.min.js"></script>
+        <script src="js/wow.min.js" defer></script>
         <!-- Custom jQuery -->
-        <script src="js/scripts.js"></script>
+        <script src="js/scripts.js" defer></script>
+
+        <script>
+
+            document.addEventListener("DOMContentLoaded", function() {
+                var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazyload-bg"));
+              
+                if ("IntersectionObserver" in window) {
+                  let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                      if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        lazyBackgroundObserver.unobserve(entry.target);
+                      }
+                    });
+                  });
+              
+                  lazyBackgrounds.forEach(function(lazyBackground) {
+                    lazyBackgroundObserver.observe(lazyBackground);
+                  });
+                }
+              });
+            
+        </script>
+       
         <!-- Scroll-Top button -->
         <a href="#" class="scrolltotop" style="display: none;">
             <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
