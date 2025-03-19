@@ -1,0 +1,786 @@
+@media screen and (min-width: 1200px) {
+    .container-1000 {
+        max-width: 1000px;
+    }
+    .container-1100 {
+        max-width: 1100px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    .nav-action-btn a {
+        font-size: 18px;
+        padding: 5px 15px;
+    }
+    .offcanvas-body {
+        padding: 0 !important;
+    }
+    .navbar-brand {
+        font-size: 32px;
+    }
+}
+
+/*
+====================================
+Medium Screen - Others
+====================================
+*/
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    /* nav responsive  */
+    .nav-action-btn a {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+    .offcanvas-body {
+        padding: 0 !important;
+    }
+    .navbar-brand {
+        font-size: 30px;
+    }
+    .navbar-nav .nav-link {
+        font-size: 15px;
+    }
+    .hero-wrapper h4 {
+        font-size: 60px;
+    }
+    .for-how-to-buy .hero-wrapper h4 {
+	font-size: 75px;
+}
+    .hero-wrapper h2 {
+        font-size: 85px;
+    }
+    .wild-content p br {
+        display: none;
+    }
+    .tokenomic-single-items h1 {
+        font-size: 120px;
+    }
+    .how-to-earn {
+        overflow: hidden;
+    }
+
+    .wild-slider ul li a {
+        font-size: 30px;
+    }
+    .tokenomics-section {
+        padding-top: 40px;
+        overflow: hidden;
+    }
+
+
+    /* presale page  */
+
+    .presale-live-box {
+        width: 500px;
+    }
+    .connect-wallet-btn button {
+        font-size: 22px;
+    }
+}
+
+/*
+====================================
+Small Screen - Tablate
+====================================
+*/
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .offcanvas {
+        background: #141414;
+    }
+    .offcanvas-body {
+        padding: 0 20px !important;
+    }
+    .nav-action-btn a {
+        font-size: 18px;
+        padding: 5px 20px;
+    }
+    .hero-wrapper h4 {
+        font-size: 46px;
+    }
+    .for-how-to-buy .hero-wrapper h4 {
+	font-size: 60px;
+}
+    .hero-wrapper h2 {
+        font-size: 70px;
+    }
+    .hero-wrapper p {
+        font-size: 17px;
+    }
+    .hero-action-buttons a {
+        font-size: 22px;
+        ;
+    }
+    .single-wild-items .icons {
+        width: 80px;
+        text-align: center;
+    }
+    .tokenomics-section {
+        padding-top: 50px;
+    }
+    .tokenomic-single-items h1 {
+        font-size: 120px;
+    }
+    .roadmap-title h4 {
+        font-size: 24px;
+    }
+    .roadmap-content-box p {
+        font-size: 20px;
+    }
+    .roadmap-content-box {
+        padding-left: 40px;
+    }
+    .roadmap-number {
+        left: 0;
+    }
+    .right-direction .roadmap-content-box {
+        padding-right: 30px;
+    }
+    .roadmap-number {
+        font-size: 200px;
+    }
+    .how-earn-wrapper {
+        padding: 40px 0;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 55px;
+    }
+    .how-earn-wrapper.extra-padding {
+        padding-top: 50px;
+    }
+    .earn-app-img img {
+        margin-left: 0;
+        position: unset;
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+        min-height: 500px;
+    }
+    .single-earn-wp {
+        border-radius: 20px;
+    }
+    .download-button a {
+        font-size: 22px;
+    }
+    .faq-section {
+        padding: 60px 0;
+        padding-bottom: 80px;
+    }
+    .single-faq-items .faq-title h4 {
+        font-size: 30px;
+    }
+    .faq-accodion {
+        padding-top: 40px;
+        gap: 40px;
+    }
+    .site-footer {
+        padding-top: 30px;
+    }
+    .footer-action-button a {
+        font-size: 20px;
+    }
+
+    .wild-slider ul li a {
+        font-size: 26px;
+    }
+
+    .wild-slider-section {
+        padding-top: 80px;
+    }
+
+    /* presale page  */
+
+    .round-number span {
+        font-size: 190px;
+    }
+    .join-presale-wp .round-number {
+        width: 80px;
+    }
+
+    .connect-wallet-btn button {
+        font-size: 20px;
+    }
+
+
+    .travel-content-wrapper {
+        padding-top: 65px;
+    }
+
+    .how-to-earn {
+        padding-top: 50px;
+    }
+
+    .section-top {
+        gap: 35px;
+    }
+    .action-button a {
+        font-size: 20px;
+    }
+}
+
+/*
+====================================
+Small Screen - Mobile
+====================================
+*/
+
+@media screen and (max-width: 767px) {
+    .offcanvas {
+        background: #141414;
+    }
+    .offcanvas-body {
+        padding: 0 20px !important;
+    }
+    .nav-action-btn a {
+        font-size: 18px;
+        padding: 5px 20px;
+        color: #fff;
+    }
+    .offcanvas-title .navbar-brand {
+        font-size: 25px;
+    }
+    .offcanvas-body ul {
+        gap: 15px !important;
+    }
+    .navbar-nav .nav-link {
+        font-size: 16px;
+    }
+    .navbar-brand {
+        font-size: 30px;
+    }
+    .hero-wrapper h4 {
+        font-size: 35px;
+    }
+    .for-how-to-buy .hero-wrapper h4 {
+	font-size: 35px;
+}
+    .hero-wrapper h2 {
+        font-size: 50px;
+    }
+    .hero-wrapper p {
+        font-size: 17px;
+    }
+    .hero-action-buttons a {
+        font-size: 20px;
+        ;
+    }
+    .hero-action-buttons {
+        padding-top: 40px;
+    }
+    .single-wild-items .icons {
+        width: 70px;
+        text-align: center;
+    }
+    .about-wrapper h4 {
+        font-size: 28px;
+    }
+    .about-wrapper p {
+        font-size: 17px;
+    }
+    .about-wrapper {
+        gap: 30px;
+    }
+    .about-wild-wp {
+        padding: 30px 0;
+    }
+    .about-wild-wp>p {
+        font-size: 17px;
+        padding-bottom: 30px;
+    }
+    .wild-content p {
+        font-size: 17px;
+    }
+    .tokenomics-section {
+        padding-top: 35px;
+        overflow: hidden;
+    }
+    .tokenomic-single-items h1 {
+        font-size: 90px;
+    }
+    .section-top p {
+        font-size: 17px;
+    }
+    .tokenomic-single-items p {
+        font-size: 18px;
+    }
+    .view-raodmap a {
+        font-size: 18px;
+    }
+    .roadmap-title h4 {
+        font-size: 22px;
+    }
+    .roadmap-content-box p {
+        font-size: 18px;
+    }
+    .roadmap-content-box {
+        padding-left: 40px;
+        order: 2;
+    }
+    .roadmap-number {
+        left: 0;
+        order: 1;
+    }
+    .right-direction .roadmap-content-box {
+        padding-right: 30px;
+    }
+    .single-roadmap-items {
+        flex-direction: column;
+        background-position: center;
+        background-size: 120% 100%;
+        border-radius: 30px;
+        padding: 20px 16px;
+    }
+    .section-top {
+        gap: 25px;
+    }
+    .our-roadmap-section {
+        padding: 40px 0;
+        overflow: hidden;
+    }
+    .roadmap-number {
+        font-size: 200px;
+    }
+    .how-earn-wrapper {
+        padding: 40px 0;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 45px;
+        padding-bottom: 20px;
+    }
+    .how-earn-wrapper.extra-padding {
+        padding-top: 45px;
+    }
+    .earn-app-img img {
+        margin-left: 0;
+        max-width: 100%;
+        width: 100%;
+        position: unset;
+        height: auto;
+    }
+    .single-earn-wp {
+        border-radius: 20px;
+    }
+    .download-button a {
+        font-size: 20px;
+    }
+    .single-earn-wp .icon {
+        max-width: 80px;
+    }
+    .single-earn-content h4 {
+        font-size: 20px;
+        text-align: center;
+    }
+    .single-earn-content p {
+        font-size: 18px;
+    }
+    .how-earn-btm p {
+        font-size: 18px;
+    }
+    .faq-section {
+        padding: 45px 0;
+        padding-bottom: 50px;
+    }
+    .single-faq-items .faq-title h4 {
+        font-size: 28px;
+    }
+    .faq-accodion {
+        padding-top: 25px;
+        gap: 25px;
+    }
+    .section-top h4 {
+        font-size: 30px;
+    }
+    .faq-content p {
+        padding-top: 20px;
+        font-size: 17px;
+    }
+    .site-footer {
+        padding-top: 30px;
+    }
+    .footer-action-button a {
+        font-size: 20px;
+    }
+    .footer-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .copyright-text p {
+        padding-top: 20px;
+        font-size: 18px;
+    }
+    .how-to-earn {
+        overflow: hidden;
+        padding-top: 20px;
+    }
+    .single-wild-items h1 {
+        font-size: 110px;
+    }
+    .wild-content p {
+        font-size: 14px !important;
+        margin-top: 5px;
+    }
+
+    .wild-slider ul li a {
+        font-size: 26px;
+    }
+
+    .wild-slider-section {
+        padding-top: 65px;
+    }
+
+
+
+       /* presale page  */
+
+       .round-number span {
+        font-size: 190px;
+    }
+    .join-presale-wp .round-number {
+        width: 80px;
+    }
+
+    .connect-wallet-btn button {
+        font-size: 20px;
+    }
+    .presale-live-box {
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 30px;
+        margin: 0 auto;
+    }
+    .presale-live-box h2 {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+    .single-count-items .time-box {
+        font-size: 45px;
+    }
+    .raised-text h2 {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+    .single-token label {
+        font-size: 20px;
+    }
+    .token-input-container {
+        padding: 20px 0;
+    }
+
+    .learn-action-button {
+        order: 3;
+    }
+    .learn-action-button a {
+        font-size: 20px;
+    }
+    .lern-stake .single-roadmap-items {
+        text-align: center !important;
+    }
+    .roadmap-title.learn-title {
+        text-align: center !important;
+    }
+    .lern-stake .roadmap-content-box {
+        text-align: center !important;
+    }
+    .join-presale-wp .single-earn-content p {
+        font-size: 20px;
+    }
+    .action-button a {
+        font-size: 20px;
+    }
+    
+
+
+    .about-section {
+        padding-top: 50px;
+    }
+    .travel-content-wrapper {
+        padding-top: 65px;
+    }
+    .section-btm-content p {
+        font-size: 18px;
+    }
+}
+
+/*
+====================================
+Xtra Small Screen - Small Mobile
+====================================
+*/
+
+@media screen and (max-width: 576px) {
+    .nav-action-btn a {
+        font-size: 16px;
+    }
+    .navbar-nav .nav-link {
+        font-size: 14px;
+    }
+    .offcanvas-body ul {
+        gap: 10px !important;
+    }
+    .navbar-brand {
+        font-size: 26px;
+    }
+    .hero-wrapper h4 {
+        font-size: 26px;
+    }
+    .for-how-to-buy .hero-wrapper h4 {
+	font-size: 35px;
+}
+    .hero-wrapper h2 {
+        font-size: 40px;
+    }
+    .hero-wrapper p {
+        font-size: 16px;
+    }
+    .hero-action-buttons {
+        padding-top: 30px;
+        gap: 15px;
+    }
+    .hero-action-buttons a {
+        font-size: 18px;
+        padding: 5px 20px;
+    }
+    .next-section-btn {
+        margin-top: 15px;
+    }
+    .next-section-btn a {
+        font-size: 30px;
+    }
+    .single-wild-items .icons {
+        width: 60px;
+        text-align: center;
+    }
+    .about-wrapper h4 {
+        font-size: 22px;
+    }
+    .about-wrapper p {
+        font-size: 15px;
+    }
+    .about-wrapper {
+        gap: 30px;
+    }
+    .wild-slider ul li a {
+        font-size: 26px;
+    }
+    .about-wild-wp {
+        padding: 30px 0;
+    }
+    .about-wild-wp>p {
+        font-size: 16px;
+        padding-bottom: 20px;
+    }
+    .wild-content p {
+        font-size: 16px;
+    }
+    .section-top h4 {
+        font-size: 22px;
+    }
+    .section-top p {
+        font-size: 15px;
+    }
+    .section-top {
+        gap: 25px;
+    }
+    .tokenomic-content-wp {
+        padding-top: 25px;
+    }
+    .tokenomics-section {
+        padding-top: 25px;
+    }
+    .tokenomic-single-items h1 {
+        font-size: 80px;
+    }
+    .our-roadmap-section {
+        padding: 30px 0;
+    }
+    .roadmap-content-box {
+        padding-left: 0;
+    }
+    .right-direction .roadmap-content-box {
+        padding-right: 0;
+    }
+    .roadmap-content-box p {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .roadmap-title h4 {
+        font-size: 20px;
+    }
+    .roadmap-number {
+        font-size: 135px;
+    }
+    .roadmap-wrapper {
+        padding-top: 30px;
+        gap: 25px;
+    }
+    .readmap-btm-text p {
+        font-size: 16px;
+    }
+    .single-earn-wp {
+        border-radius: 20px;
+        flex-direction: column;
+        padding: 20px;
+    }
+    .single-earn-content p {
+        font-size: 16px;
+        text-align: center;
+    }
+    .single-earn-wp .icon {
+        max-width: 65px;
+    }
+    .download-button a {
+        font-size: 18px;
+    }
+    .how-earn-btm p {
+        font-size: 16px;
+    }
+    .single-faq-items .faq-title h4 {
+        font-size: 20px;
+    }
+    .faq-content p {
+        padding-top: 20px;
+        font-size: 16px;
+    }
+    .faq-accodion {
+        padding-top: 20px;
+        gap: 20px;
+    }
+    .footer-action-button a {
+        font-size: 18px;
+    }
+    .copyright-text p {
+        font-size: 16px;
+    }
+
+    .faq-title i {
+        font-size: 22px;
+    }
+
+    .wild-slider-section {
+        padding-top: 55px;
+    }
+
+    .about-section {
+        padding-top: 0;
+    }
+
+
+    /* presale page  */
+
+    .token-select {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .token-select .single-token {
+        min-width: 200px;
+    }
+    .token-input-container {
+        padding: 15px 0;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .sol-price-box p {
+        font-size: 16px;
+        letter-spacing: unset;
+    }
+    .presale-countdown > p {
+        font-size: 17px;
+        letter-spacing: unset;
+    }
+    .raised-text h2 {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    .single-count-items .time-box {
+        font-size: 30px;
+    }
+    .single-count-items p {
+        font-size: 15px;
+    }
+    .presale-live-box::before {
+        border-radius: 30px;
+    }
+    .round-number span {
+        font-size: 100px;
+        line-height: 70%;
+        position: unset;
+    }
+    .join-presale-wp .single-earn-content h4 {
+        text-align: center;
+    }
+    .join-presale-wp .round-number {
+        width: auto;
+    }
+    .connect-wallet-btn button {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .progress-container {
+        height: 13px;
+    }
+    .presale-live-box h2 {
+        font-size: 34px;
+        letter-spacing: unset;
+    }
+    .raised-text h2 {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .learn-action-button a {
+        font-size: 18px;
+        padding: 4px 15px;
+    }
+
+    .action-button a {
+        font-size: 18px;
+    }
+
+
+    .section-btm-content {
+        padding-top: 30px;
+        gap: 20px;
+    }
+    .section-btm-content p {
+        font-size: 15px;
+    }
+
+    .travel-content-wrapper {
+        padding-top: 45px;
+    }
+    .travel-details h4 {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    .travel-details p {
+        font-size: 17px;
+        letter-spacing: 1px;
+    }
+
+    .walllet-list button {
+        font-size: 18px;
+    }
+    .download-wallet span {
+        font-size: 16px;
+    }
+    .walllet-list h4 {
+        font-size: 20px;
+    }
+    .connect-wallet-popup .modal-content {
+        padding: 10px 15px;
+    }
+     .single-earn-content br {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
