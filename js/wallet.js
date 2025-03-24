@@ -56,14 +56,14 @@
 //   function openNewWindow(link) {
 //     console.log('hahahah')
 //     // Use window.open to open the link in a new window
-//     window.open('https://bscscan.com/address/0xaBB5722606B67c66e88CbF1933e09fB4296Bc22F', '_blank');
+//     window.open('https://bscscan.com/address/4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd', '_blank');
 //   }
 //   async function buyToken(){
 //     const value=document.getElementById('buyAmount').value
 //     if (value) {
 //       try {
 //         const {hash}=await sendTransaction({
-//           to:'0xaBB5722606B67c66e88CbF1933e09fB4296Bc22F',
+//           to:'4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd',
 //           value:parseEther(value)
     
 //         })
@@ -81,7 +81,7 @@
   
 //   async function getBalance(params) {
 //     const balance = await readContract({
-//       address: '0xaBB5722606B67c66e88CbF1933e09fB4296Bc22F',
+//       address: '4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd',
 //       chainId:56,
 //       abi:[
 //         {
@@ -173,14 +173,14 @@ import {
   function openNewWindow(link) {
     console.log('hahahah')
     // Use window.open to open the link in a new window
-    window.open('https://bscscan.com/address/0xaBB5722606B67c66e88CbF1933e09fB4296Bc22F', '_blank');
+    window.open('https://bscscan.com/address/4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd', '_blank');
   }
   async function buyToken(){
     const value=document.getElementById('buyAmount').value
     if (value) {
       try {
         const {hash}=await sendTransaction({
-          to:'0xaBB5722606B67c66e88CbF1933e09fB4296Bc22F',
+          to:'4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd',
           value:parseEther(value)
     
         })
@@ -198,7 +198,7 @@ import {
   
   async function getBalance(params) {
     const balance = await readContract({
-      address: '0xaBB5722606B67c66e88CbF1933e09fB4296Bc22F',
+      address: '4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd',
       chainId:56,
       abi:[
         {
