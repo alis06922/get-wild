@@ -11,6 +11,9 @@
         <title>Wild Token</title>
         <!-- Fav Icon -->
         <link rel="icon" href="images/favicon.webp">
+
+        <link rel="preload" as="image" href="images/hero-bg.webp" as="image">
+
         <!-- Include Bootstrap -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
         <!-- font link  -->
@@ -449,29 +452,6 @@
         <script src="js/wow.min.js" defer></script>
         <!-- Custom jQuery -->
         <script src="js/scripts.js" defer></script>
-
-        <script>
-
-            document.addEventListener("DOMContentLoaded", function() {
-                var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazyload-bg"));
-              
-                if ("IntersectionObserver" in window) {
-                  let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function(entry) {
-                      if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        lazyBackgroundObserver.unobserve(entry.target);
-                      }
-                    });
-                  });
-              
-                  lazyBackgrounds.forEach(function(lazyBackground) {
-                    lazyBackgroundObserver.observe(lazyBackground);
-                  });
-                }
-              });
-            
-        </script>
        
         <!-- Scroll-Top button -->
         <a href="#" class="scrolltotop" style="display: none;">

@@ -11,6 +11,8 @@
         <title>Wild Presale</title>
         <!-- Fav Icon -->
         <link rel="icon" href="images/favicon.webp">
+        <link rel="preload" as="image" href="images/hero-bg.webp" as="image">
+
         <!-- Include Bootstrap -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
         <!-- font link  -->
@@ -78,7 +80,7 @@
             <!-- nav area style end hare  -->
         </header>
 
-        <section class="hero-section main-hero" id="home">
+        <section class="hero-section main-hero lazyload-bg" id="home">
             <div class="container container-1000">
                 <div class="hero-wrapper wow fadeInUp text-center">
                     <h4 class="wow fadeInUp">SECURE YOUR WILD EARLY</h4>
@@ -482,7 +484,7 @@
         <script src="js/wow.min.js" defer></script>
         <!-- Custom jQuery -->
         <script src="js/scripts.js" defer></script>
-        <!-- Scroll-Top button -->
+
         <a href="#" class="scrolltotop" style="display: none;">
             <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
             <span class="pluse"></span>
