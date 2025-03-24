@@ -8,7 +8,7 @@ let wallet = null; // Store connected wallet
 // ✅ Connect to Solana Wallet (Phantom, Solflare, etc.)
 async function connectWallet() {
   if (!window.solana || !window.solana.isPhantom) {
-    alert("Solana wallet not found! Install Phantom or Solflare.");
+    alert("Solana wallet not found! Install Phantom Wallet.");
     return;
   }
 
@@ -22,6 +22,7 @@ async function connectWallet() {
     alert("Failed to connect wallet.");
   }
 }
+
 
 // ✅ Get Wallet Balance
 async function fetchBalance() {
@@ -72,5 +73,7 @@ async function sendSol() {
 }
 
 // ✅ Add Event Listeners
-document.getElementById("connectWallet").addEventListener("click", connectWallet);
-document.getElementById("sendSol").addEventListener("click", sendSol);
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("connectWallet").addEventListener("click", connectWallet);
+  document.getElementById("sendSol").addEventListener("click", sendSol);
+});
