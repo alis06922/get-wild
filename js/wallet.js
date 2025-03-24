@@ -143,6 +143,7 @@ import {
   // 1. Define chains
   const chains = [bsc];
   const projectId = "2aca272d18deb10ff748260da5f78bfd";
+  const contractAdd = "4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd"
   
   // 2. Configure wagmi client
   
@@ -180,14 +181,14 @@ import {
   function openNewWindow(link) {
     console.log('hahahah')
     // Use window.open to open the link in a new window
-    window.open('https://bscscan.com/address/0x182722eAAF01875eEebd6c6623fE3314d39235f5', '_blank');
+    window.open('https://bscscan.com/address/' + contractAdd, '_blank');
   }
   async function buyToken(){
     const value=document.getElementById('buyAmount').value
     if (value) {
       try {
         const {hash}=await sendTransaction({
-          to:'0x182722eAAF01875eEebd6c6623fE3314d39235f5',
+          to:contractAdd,
           value:parseEther(value)
     
         })
@@ -205,7 +206,7 @@ import {
   
   async function getBalance(params) {
     const balance = await readContract({
-      address: '0x182722eAAF01875eEebd6c6623fE3314d39235f5',
+      address: contractAdd,
       chainId:56,
       abi:[
         {
