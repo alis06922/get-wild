@@ -180,14 +180,14 @@ import {
   function openNewWindow(link) {
     console.log('hahahah')
     // Use window.open to open the link in a new window
-    window.open('https://bscscan.com/address/0xaBB5722606B67c66e88CbF1933e09fB4296Bc22F', '_blank');
+    window.open('https://bscscan.com/address/0x182722eAAF01875eEebd6c6623fE3314d39235f5', '_blank');
   }
   async function buyToken(){
     const value=document.getElementById('buyAmount').value
     if (value) {
       try {
         const {hash}=await sendTransaction({
-          to:'0xaBB5722606B67c66e88CbF1933e09fB4296Bc22F',
+          to:'0x182722eAAF01875eEebd6c6623fE3314d39235f5',
           value:parseEther(value)
     
         })
@@ -205,7 +205,7 @@ import {
   
   async function getBalance(params) {
     const balance = await readContract({
-      address: '0xaBB5722606B67c66e88CbF1933e09fB4296Bc22F',
+      address: '0x182722eAAF01875eEebd6c6623fE3314d39235f5',
       chainId:56,
       abi:[
         {
