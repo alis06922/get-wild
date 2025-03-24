@@ -125,7 +125,6 @@
 
 
 import {
-    http,
     EthereumClient,
     w3mConnectors,
     w3mProvider,
