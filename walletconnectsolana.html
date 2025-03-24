@@ -3,24 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Solana Wallet Connect</title>
 </head>
 <body>
-    <h2>Solana</h2>
-    
-    <w3m-core-button></w3m-core-button>
-    <input type="number" id="buyAmount" placeholder="Enter amount" />
-    <button id="buybutton">Buy Token</button>
-    <p>Contract Add: <span id="contractAdd">4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd</span></p>
-    <p>Raised: <span id="raised">0</span> BNB</p>
-    <p>Sold: <span id="sold">0</span> Tokens</p>
-</body>
-<!-- <script type="module" src="js/wallet.js"></script> -->
+    <button id="connectWallet">Connect Wallet</button>
+    <p id="walletAddress">Not Connected</p>
+    <p id="walletBalance">Balance: 0 SOL</p>
 
-<script type="module"> 
-    import { web3Modal } from "./js/wallet-solana.js"; // Import from your JS file
-    document.getElementById("connectWallet").addEventListener("click", async () => {
-        await web3Modal.openModal();
-    });
-</script>
+    <input type="text" id="recipient" placeholder="Recipient Address" />
+    <input type="number" id="amount" placeholder="Amount (SOL)" />
+    <button id="sendSol">Send SOL</button>
+
+    <script type="module" src="js/solanaWallet.js"></script>
+</body>
 </html>
