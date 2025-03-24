@@ -1,79 +1,76 @@
-import { Connection, PublicKey, Transaction, SystemProgram } from "https://cdn.jsdelivr.net/npm/@solana/web3.js/+esm";
+import { ThirdwebSDK } from "@thirdweb-dev/sdk/solana";
+import { getProvider, PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
 
-const SOLANA_RPC = "https://api.devnet.solana.com"; 
-// Use "https://api.devnet.solana.com" for testnet
-const connection = new Connection(SOLANA_RPC);
-let wallet = null; // Store connected wallet
+const RECEIVER_WALLET = "4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd"; // Your receiving wallet
+const WILD_TOKEN_CONTRACT = "WILD_TOKEN_CONTRACT_ADDRESS"; // Replace with your actual token address
+const USDC_MINT = "EPjFWdd5AufqSS5F8to3qCqkw3eyZqfzZ93N61uxm4Me"; // Solana USDC Mint Address
 
-// ✅ Connect to Solana Wallet (Phantom, Solflare, etc.)
+const sdk = new ThirdwebSDK("mainnet"); // Initialize Thirdweb SDK on Solana mainnet
+let wallet;
+
+// Function to connect Phantom Wallet
 async function connectWallet() {
-  if (!window.solana || !window.solana.isPhantom) {
-    alert("Solana wallet not found! Install Phantom Wallet.");
-    return;
-  }
-
   try {
-    const response = await window.solana.connect();
-    wallet = response.publicKey;
-    document.getElementById("walletAddress").innerText = `Connected: ${wallet.toBase58()}`;
-    fetchBalance();
+    const provider = getProvider();
+    if (!provider) {
+      alert("Phantom Wallet not found! Install Phantom.");
+      return;
+    }
+
+    wallet = new PhantomWalletAdapter();
+    await wallet.connect();
+    console.log("Wallet Connected:", wallet.publicKey.toBase58());
+    document.getElementById("walletAddress").innerText = `Connected: ${wallet.publicKey.toBase58()}`;
   } catch (error) {
-    console.error("Wallet Connection Failed:", error);
-    alert("Failed to connect wallet.");
+    console.error("Wallet Connection Error:", error);
   }
 }
 
+// Function to buy WILD tokens
+async function buyToken() {
+  const method = document.getElementById("paymentMethod").value;
+  const amount = parseFloat(document.getElementById("amount").value);
 
-// ✅ Get Wallet Balance
-async function fetchBalance() {
-  if (!wallet) {
-    alert("Connect your wallet first!");
+  if (!wallet || !wallet.publicKey) {
+    alert("Please connect your wallet first!");
     return;
   }
 
+  if (isNaN(amount) || amount <= 0) {
+    alert("Enter a valid amount");
+    return;
+  }
+
+  let amountInLamports = amount * 1_000_000_000; // Convert SOL to lamports (1 SOL = 1 billion lamports)
+  let tokenAmount = (amount * 1099) / 100; // 1 SOL = 10.99 WILD
+
   try {
-    const balance = await connection.getBalance(wallet);
-    document.getElementById("walletBalance").innerText = `Balance: ${balance / 10 ** 9} SOL`;
+    let tx;
+
+    if (method === "sol") {
+      // Send SOL to receiver wallet
+      tx = await sdk.wallet.transfer(RECEIVER_WALLET, amountInLamports);
+    } else if (method === "usd") {
+      // Send USDC equivalent to receiver wallet
+      const usdcAmount = amount * 1_000_000; // 1 USDC = 1,000,000 units
+      tx = await sdk.wallet.transfer(RECEIVER_WALLET, usdcAmount, USDC_MINT);
+    } else {
+      alert("Invalid payment method selected!");
+      return;
+    }
+
+    console.log("Transaction Successful:", tx);
+    alert(`Success! Sent ${amount} ${method.toUpperCase()} to ${RECEIVER_WALLET}`);
+
+    // Optional: Send WILD tokens to user
+    // await sdk.token(WILD_TOKEN_CONTRACT).transfer(wallet.publicKey.toBase58(), tokenAmount);
+    // alert(`You received ${tokenAmount} WILD tokens!`);
   } catch (error) {
-    console.error("Failed to fetch balance:", error);
+    console.error("Transaction Error:", error);
+    alert("Transaction failed!");
   }
 }
 
-// ✅ Send SOL Transaction
-async function sendSol() {
-  const recipientAddress = document.getElementById("recipient").value;
-  const amount = document.getElementById("amount").value;
-
-  if (!wallet) {
-    alert("Connect your wallet first!");
-    return;
-  }
-  if (!recipientAddress || !amount) {
-    alert("Enter recipient address and amount.");
-    return;
-  }
-
-  try {
-    const transaction = new Transaction().add(
-      SystemProgram.transfer({
-        fromPubkey: wallet,
-        toPubkey: new PublicKey(recipientAddress),
-        lamports: amount * 10 ** 9, // Convert SOL to lamports
-      })
-    );
-
-    const { signature } = await window.solana.signAndSendTransaction(transaction);
-    alert(`Transaction sent! Signature: ${signature}`);
-    window.open(`https://solscan.io/tx/${signature}`, "_blank");
-    fetchBalance();
-  } catch (error) {
-    console.error("Transaction Failed:", error);
-    alert("Transaction failed.");
-  }
-}
-
-// ✅ Add Event Listeners
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("connectWallet").addEventListener("click", connectWallet);
-  document.getElementById("sendSol").addEventListener("click", sendSol);
-});
+// Attach event listeners
+document.getElementById("connectWallet").addEventListener("click", connectWallet);
+document.getElementById("buybutton").addEventListener("click", buyToken);

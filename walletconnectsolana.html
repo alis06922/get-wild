@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solana Wallet Connect</title>
+    <title>Buy WILD Token</title>
 </head>
 <body>
     <button id="connectWallet">Connect Wallet</button>
     <p id="walletAddress">Not Connected</p>
-    <p id="walletBalance">Balance: 0 SOL</p>
 
-    <input type="text" id="recipient" placeholder="Recipient Address" />
-    <input type="number" id="amount" placeholder="Amount (SOL)" />
-    <button id="sendSol">Send SOL</button>
+    <select id="paymentMethod">
+        <option value="sol">Pay with SOL</option>
+        <option value="usd">Pay with USDC</option>
+    </select>
 
-    <script type="module" src="js/solanaWallet.js"></script>
+    <input type="number" id="amount" placeholder="Enter amount of SOL/USDC" />
+    <button id="buybutton">Buy WILD Token</button>
 </body>
+<script type="module" src="js/solanaWallet.js"></script>
 </html>
