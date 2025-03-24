@@ -1,23 +1,29 @@
-import { ThirdwebSDK } from "@thirdweb-dev/sdk/solana";
-import { getProvider, PhantomWalletAdapter } from "@solana/wallet-adapter-wallets";
+// Load Thirdweb SDK dynamically from CDN
+import { ThirdwebSDK } from "https://cdn.jsdelivr.net/npm/@thirdweb-dev/sdk@4.0.0/dist/thirdweb-sdk.min.js";
 
-const RECEIVER_WALLET = "4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd"; // Your receiving wallet
-const WILD_TOKEN_CONTRACT = "WILD_TOKEN_CONTRACT_ADDRESS"; // Replace with your actual token address
-const USDC_MINT = "EPjFWdd5AufqSS5F8to3qCqkw3eyZqfzZ93N61uxm4Me"; // Solana USDC Mint Address
+// Define Solana Network
+const network = "mainnet-beta"; // Change to "devnet" for testing
 
-const sdk = new ThirdwebSDK("mainnet"); // Initialize Thirdweb SDK on Solana mainnet
+// Thirdweb SDK for Solana
+const sdk = new ThirdwebSDK(network);
+
+// Phantom Wallet Connection
 let wallet;
 
-// Function to connect Phantom Wallet
+// Your Wallet to Receive Payments
+const RECEIVER_WALLET = "4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd"; 
+const WILD_TOKEN_CONTRACT = "YOUR_WILD_TOKEN_CONTRACT_ADDRESS"; // Replace with actual token contract
+const USDC_MINT = "EPjFWdd5AufqSS5F8to3qCqkw3eyZqfzZ93N61uxm4Me"; // USDC Mint Address on Solana
+
+// Function to Connect Phantom Wallet
 async function connectWallet() {
   try {
-    const provider = getProvider();
-    if (!provider) {
+    if (!window.solana) {
       alert("Phantom Wallet not found! Install Phantom.");
       return;
     }
 
-    wallet = new PhantomWalletAdapter();
+    wallet = window.solana;
     await wallet.connect();
     console.log("Wallet Connected:", wallet.publicKey.toBase58());
     document.getElementById("walletAddress").innerText = `Connected: ${wallet.publicKey.toBase58()}`;
@@ -26,7 +32,7 @@ async function connectWallet() {
   }
 }
 
-// Function to buy WILD tokens
+// Function to Buy WILD Tokens
 async function buyToken() {
   const method = document.getElementById("paymentMethod").value;
   const amount = parseFloat(document.getElementById("amount").value);
@@ -41,7 +47,6 @@ async function buyToken() {
     return;
   }
 
-  let amountInLamports = amount * 1_000_000_000; // Convert SOL to lamports (1 SOL = 1 billion lamports)
   let tokenAmount = (amount * 1099) / 100; // 1 SOL = 10.99 WILD
 
   try {
@@ -49,7 +54,7 @@ async function buyToken() {
 
     if (method === "sol") {
       // Send SOL to receiver wallet
-      tx = await sdk.wallet.transfer(RECEIVER_WALLET, amountInLamports);
+      tx = await sdk.wallet.transfer(RECEIVER_WALLET, amount);
     } else if (method === "usd") {
       // Send USDC equivalent to receiver wallet
       const usdcAmount = amount * 1_000_000; // 1 USDC = 1,000,000 units
@@ -71,6 +76,6 @@ async function buyToken() {
   }
 }
 
-// Attach event listeners
+// Attach Event Listeners
 document.getElementById("connectWallet").addEventListener("click", connectWallet);
 document.getElementById("buybutton").addEventListener("click", buyToken);
