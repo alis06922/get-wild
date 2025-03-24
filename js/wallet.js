@@ -23,8 +23,8 @@ const {
 
 // 1. Define chains
 const chains = [bsc];
-// enter api key for enfura
-const projectId = "357627bfed1340cd868391aabde01b7e";
+// enter api key for wagmi key
+const projectId = "3fcc6bba6f1de962d911bb5b5c3dba68";
 // enter contract add 
 const contractadd = '0x182722eAAF01875eEebd6c6623fE3314d39235f5'
 
