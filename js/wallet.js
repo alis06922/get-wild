@@ -145,7 +145,6 @@ import {
 
 //   wagmi client project id
   const projectId = "3fcc6bba6f1de962d911bb5b5c3dba68"; 
-  const contractAdd = "4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd"
   
   // 2. Configure wagmi client
   
@@ -183,14 +182,14 @@ import {
   function openNewWindow(link) {
     console.log('hahahah')
     // Use window.open to open the link in a new window
-    window.open('https://bscscan.com/address/' + contractAdd, '_blank');
+    window.open('https://bscscan.com/address/4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd', '_blank');
   }
   async function buyToken(){
     const value=document.getElementById('buyAmount').value
     if (value) {
       try {
         const {hash}=await sendTransaction({
-          to:contractAdd,
+          to:'4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd',
           value:parseEther(value)
     
         })
@@ -208,7 +207,7 @@ import {
   
   async function getBalance(params) {
     const balance = await readContract({
-      address: contractAdd,
+      address: '4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd',
       chainId:56,
       abi:[
         {
@@ -233,8 +232,9 @@ import {
    let numberValue= Number(balance)/10**18
    document.getElementById('raised').innerText=numberValue
   document.getElementById("sold").innerText=numberValue*40000000000000
-  document.getElementById('contractAdd').innerText = ''.contractAdd
-  }
+  document.getElementById('contractAdd').innerText = '4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd';
+
+}
   document.addEventListener('DOMContentLoaded', function() {
     getBalance()
   }, false);
