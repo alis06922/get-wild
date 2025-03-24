@@ -53,14 +53,14 @@ import {
   function openNewWindow(link) {
     console.log('hahahah')
     // Use window.open to open the link in a new window
-    window.open('https://bscscan.com/address/0x182722eAAF01875eEebd6c6623fE3314d39235f5', '_blank');
+    window.open('https://bscscan.com/address/4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd', '_blank');
   }
   async function buyToken(){
     const value=document.getElementById('buyAmount').value
     if (value) {
       try {
         const {hash}=await sendTransaction({
-          to:'0x182722eAAF01875eEebd6c6623fE3314d39235f5',
+          to:'4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd',
           value:parseEther(value)
     
         })
@@ -78,7 +78,7 @@ import {
   
   async function getBalance(params) {
     const balance = await readContract({
-      address: '0x182722eAAF01875eEebd6c6623fE3314d39235f5',
+      address: '4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd',
       chainId:56,
       abi:[
         {
