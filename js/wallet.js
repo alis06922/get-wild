@@ -232,7 +232,6 @@ import {
    let numberValue= Number(balance)/10**18
    document.getElementById('raised').innerText=numberValue
   document.getElementById("sold").innerText=numberValue*40000000000000
-  document.getElementById('contractAdd').innerText = '4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd';
 
 }
   document.addEventListener('DOMContentLoaded', function() {
