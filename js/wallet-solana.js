@@ -1,113 +1,76 @@
-import {
-    EthereumClient,
-    w3mConnectors,
-    w3mProvider,
-    WagmiCore,
-    WagmiCoreChains,
-    WagmiCoreConnectors,
-  } from "https://unpkg.com/@web3modal/ethereum@2.6.2";
-  
-  import { Web3Modal } from "https://unpkg.com/@web3modal/html@2.6.2";
-  // 0. Import wagmi dependencies
-  const { bsc } = WagmiCoreChains;
-  console.log({WagmiCoreChains});
-  const { configureChains, createConfig, getAccount, readContract,fetchBalance ,sendTransaction}  = WagmiCore;
-  
-  // 1. Define chains
-  const chains = [bsc];
-  const projectId = "2aca272d18deb10ff748260da5f78bfd";
-  
-  // 2. Configure wagmi client
+import { Connection, PublicKey, Transaction, SystemProgram } from "https://cdn.jsdelivr.net/npm/@solana/web3.js/+esm";
 
-  const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
-  const wagmiConfig = createConfig({
-    autoConnect: true,
-    connectors: [
-      ...w3mConnectors({ chains, version: 2, projectId }),
-      new WagmiCoreConnectors.CoinbaseWalletConnector({
-        chains,
-        options: {
-          appName: "html wagmi example",
-        },
-      }),
-    ],
-    publicClient,
-  });
-  
-  // 3. Create ethereum and modal clients
-  const ethereumClient = new EthereumClient(wagmiConfig, chains);
-  export const web3Modal = new Web3Modal(
-    {
-      projectId,
-      walletImages: {
-        safe: "https://pbs.twimg.com/profile_images/1566773491764023297/IvmCdGnM_400x400.jpg",
-      },
-    },
-    ethereumClient
-  )
-  function parseEther(value){
-   let str= String(Number(value)*10**9)
-   return str+'000000000'
-  
+const SOLANA_RPC = "https://api.devnet.solana.com"; 
+// Use "https://api.devnet.solana.com" for testnet
+const connection = new Connection(SOLANA_RPC);
+let wallet = null; // Store connected wallet
+
+// ✅ Connect to Solana Wallet (Phantom, Solflare, etc.)
+async function connectWallet() {
+  if (!window.solana || !window.solana.isPhantom) {
+    alert("Solana wallet not found! Install Phantom or Solflare.");
+    return;
   }
-  function openNewWindow(link) {
-    console.log('hahahah')
-    // Use window.open to open the link in a new window
-    window.open('https://bscscan.com/address/4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd', '_blank');
+
+  try {
+    const response = await window.solana.connect();
+    wallet = response.publicKey;
+    document.getElementById("walletAddress").innerText = `Connected: ${wallet.toBase58()}`;
+    fetchBalance();
+  } catch (error) {
+    console.error("Wallet Connection Failed:", error);
+    alert("Failed to connect wallet.");
   }
-  async function buyToken(){
-    const value=document.getElementById('buyAmount').value
-    if (value) {
-      try {
-        const {hash}=await sendTransaction({
-          to:'4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd',
-          value:parseEther(value)
-    
-        })
-        openNewWindow()
-       
-  
-      } catch (e) {
-        alert('Something Went Wrong')
-        console.log(e)
-      }
-     
-  
-    }
+}
+
+// ✅ Get Wallet Balance
+async function fetchBalance() {
+  if (!wallet) {
+    alert("Connect your wallet first!");
+    return;
   }
-  
-  async function getBalance(params) {
-    const balance = await readContract({
-      address: '4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd',
-      chainId:56,
-      abi:[
-        {
-          "constant": true,
-          "inputs": [],
-          "name": "totalRaised",
-          "outputs": [
-            {
-              "name": "",
-              "type": "uint256"
-            }
-          ],
-          "payable": false,
-          "stateMutability": "view",
-          "type": "function"
-        }
-      ],
-      method:'totalRaised'
-      
-    })
-    // console.log({})
-   let numberValue= Number(balance)/10**18
-   document.getElementById('raised').innerText=numberValue
-  document.getElementById("sold").innerText=numberValue*40000000000000
+
+  try {
+    const balance = await connection.getBalance(wallet);
+    document.getElementById("walletBalance").innerText = `Balance: ${balance / 10 ** 9} SOL`;
+  } catch (error) {
+    console.error("Failed to fetch balance:", error);
   }
-  document.addEventListener('DOMContentLoaded', function() {
-    getBalance()
-  }, false);
-  
-  // getBalance()
-  document.getElementById('buybutton').addEventListener("click",buyToken)
-  
+}
+
+// ✅ Send SOL Transaction
+async function sendSol() {
+  const recipientAddress = document.getElementById("recipient").value;
+  const amount = document.getElementById("amount").value;
+
+  if (!wallet) {
+    alert("Connect your wallet first!");
+    return;
+  }
+  if (!recipientAddress || !amount) {
+    alert("Enter recipient address and amount.");
+    return;
+  }
+
+  try {
+    const transaction = new Transaction().add(
+      SystemProgram.transfer({
+        fromPubkey: wallet,
+        toPubkey: new PublicKey(recipientAddress),
+        lamports: amount * 10 ** 9, // Convert SOL to lamports
+      })
+    );
+
+    const { signature } = await window.solana.signAndSendTransaction(transaction);
+    alert(`Transaction sent! Signature: ${signature}`);
+    window.open(`https://solscan.io/tx/${signature}`, "_blank");
+    fetchBalance();
+  } catch (error) {
+    console.error("Transaction Failed:", error);
+    alert("Transaction failed.");
+  }
+}
+
+// ✅ Add Event Listeners
+document.getElementById("connectWallet").addEventListener("click", connectWallet);
+document.getElementById("sendSol").addEventListener("click", sendSol);
