@@ -6,16 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="connectWallet">Connect Wallet</button>
+    <!-- <button id="connectWallet">Connect Wallet</button> -->
+    <w3m-core-button></w3m-core-button>
     <input type="number" id="buyAmount" placeholder="Enter amount" />
     <button id="buybutton">Buy Token</button>
+    <p>Contract Add: <span id="contractAdd"></span></p>
     <p>Raised: <span id="raised">0</span> BNB</p>
     <p>Sold: <span id="sold">0</span> Tokens</p>
 </body>
-<script type="module">
-    import { web3Modal } from "./js/wallet.js"; // Import from your JS file
-    document.getElementById("connectWallet").addEventListener("click", async () => {
-        await web3Modal.openModal();
-    });
-</script>
+<script type="module" src="js/wallet.js"></script>
+
+<!-- <script type="module"> 
+    // import { web3Modal } from "./js/wallet.js"; // Import from your JS file
+    // document.getElementById("connectWallet").addEventListener("click", async () => {
+    //     await web3Modal.openModal();
+    // });
+</script> -->
 </html>

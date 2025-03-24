@@ -142,7 +142,9 @@ import {
   
   // 1. Define chains
   const chains = [bsc];
-  const projectId = "2aca272d18deb10ff748260da5f78bfd";
+
+//   wagmi client project id
+  const projectId = "3fcc6bba6f1de962d911bb5b5c3dba68"; 
   const contractAdd = "4idxS6tmUmyLBuJyDLka3obHrTTng28QhrhpLoX2RdDd"
   
   // 2. Configure wagmi client
@@ -231,6 +233,7 @@ import {
    let numberValue= Number(balance)/10**18
    document.getElementById('raised').innerText=numberValue
   document.getElementById("sold").innerText=numberValue*40000000000000
+  document.getElementById('contractAdd').innerText = contractAdd
   }
   document.addEventListener('DOMContentLoaded', function() {
     getBalance()
