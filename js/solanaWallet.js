@@ -2,7 +2,7 @@
 import { ThirdwebSDK } from "https://cdn.jsdelivr.net/npm/@thirdweb-dev/sdk@4.0.0/dist/thirdweb-sdk.min.js";
 
 // Define Solana Network
-const network = "mainnet-beta"; // Change to "devnet" for testing
+const network = "devnet"; // Change to "devnet" for testing
 
 // Thirdweb SDK for Solana
 const sdk = new ThirdwebSDK(network);
